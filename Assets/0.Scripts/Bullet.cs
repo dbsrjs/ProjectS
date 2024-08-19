@@ -4,21 +4,14 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private void Start()
-    {
-        transform.Rotate(0, 0, 180);
-    }
-
     private void Update()
     {
         float time = 0;
 
         time += Time.deltaTime;
 
-        if(time >= 3f)
+        if(time >= 5f)
             Destroy(gameObject);
-
-        transform.position += new Vector3(0.001f, 0, 0);
     }
 
     private void OnTriggerEnter(Collider other)

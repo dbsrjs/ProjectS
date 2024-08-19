@@ -3,44 +3,43 @@ using System.Collections.Generic;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class PakSiWoo : MonoBehaviour
 {
     [Header("Info")]
     public float speed = 5f;
     public float hp = 100;
-    public Transform target;
     bool die = false;
 
     [Header("Other")]
     private GameObject player;
 
+    [SerializeField] private GameObject textGameObj;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").gameObject;
-        target = player.transform;
-    }
-
-    private void Start()
-    {
-        print("박시우 바보");
     }
 
     private void Update()
     {
         transform.position = new Vector3(transform.position.x, 1, transform.position.z);
 
-        if(!die)
+        //textGameObj.transform.LookAt(target);
+        textGameObj.transform.rotation = player.transform.rotation;
+        //transform.rotation = Cam.transform.rotation;
+
+        if (!die)
             Move();
     }
 
     public void Move()
     {
-        if (target != null)
+        if (player != null)
         {
             // 플레이어와의 거리 계산
-            float distance = Vector3.Distance(this.transform.position, target.position);
+            float distance = Vector3.Distance(this.transform.position, player.transform.position);
                 
-            Vector3 direction = (target.position - transform.position).normalized;
+            Vector3 direction = (player.transform.position - transform.position).normalized;
             this.transform.position += direction * speed * Time.deltaTime;
         }
     }

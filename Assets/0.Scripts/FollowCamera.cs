@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Camera : MonoBehaviour
+public class FollowCamera : MonoBehaviour
 {
     private float rotateSpeedX = 3;
     private float rotateSpeedY = 5;

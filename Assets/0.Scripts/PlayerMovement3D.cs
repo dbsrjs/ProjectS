@@ -24,7 +24,6 @@ public class PlayerMovement3D : MonoBehaviour
 
     void Update()
     {
-
         //발 위치의 충돌을 체크해 충돌 중이라면 true 아니면 false
         if (characterController.isGrounded == false)
         {
