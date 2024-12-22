@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4655418557046857755}
   - component: {fileID: 3705754832373438654}
   - component: {fileID: 9028724608884569784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 265755163935955407}
   - component: {fileID: 9141852150811378505}
   - component: {fileID: 8378142290751976928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 220532264079414878}
   - component: {fileID: 5546774604883214360}
   - component: {fileID: 984100630809991170}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\uBC15\uC2DC\uC6B0"
   m_TagString: park
   m_Icon: {fileID: 0}

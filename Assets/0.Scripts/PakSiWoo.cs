@@ -55,13 +55,4 @@ public class PakSiWoo : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "bullet")
-        {
-            Hit(10);
-            Debug.Log("HIT");
-        }
-    }
 }

@@ -17,6 +17,8 @@ public class ParkSiWooCreate : MonoBehaviour
         StartCoroutine(Create());
     }
 
+    /// <summary>
+    /// 5초에 한번씩 박시우를 생성함
     private IEnumerator Create()
     {
         float targetX = target.transform.position.x;
@@ -29,7 +31,7 @@ public class ParkSiWooCreate : MonoBehaviour
 
         Instantiate(siWooPrefab, pos, Quaternion.identity);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
 
         StartCoroutine(Create());
     }

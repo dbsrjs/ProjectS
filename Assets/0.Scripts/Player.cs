@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    private PlayerMovement3D playerMovement3D;
     private Text parkIQText;
 
 
@@ -18,12 +17,6 @@ public class Player : MonoBehaviour
 
     Vector3 moveVec;    //이동 좌표
 
-    private void Awake()
-    {
-        playerMovement3D = GetComponent<PlayerMovement3D>();
-
-    }
-
     void Update()
     {
         float hAxis = Input.GetAxisRaw("Horizontal");
@@ -32,7 +25,6 @@ public class Player : MonoBehaviour
         transform.position += moveVec * 10f * Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Space)) //점프
-            playerMovement3D.JumpTo();
 
         if (Input.GetMouseButtonDown(0))//공격
             StartCoroutine(Shot());
