@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class FollowCamera : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     private float rotateSpeedX = 3;
     private float rotateSpeedY = 5;
@@ -12,13 +11,21 @@ public class FollowCamera : MonoBehaviour
     private float eulerAngleX;
     private float eulerAngleY;
 
-    public void RotaTo(float mouseX, float mouseY)
+    public void RotateTo(float mouseX, float mouseY)
     {
+        /*
+         * 마우스를 좌/우로 움직이는 mouseX 값을 y축에 대입하는 이유는
+         *마우스를 좌/우로 움직일 때 카메라도 좌/우를 보려면 카메라 오브젝트의
+         *y축이 회전되어야 하기 때문
+         */
         eulerAngleY += mouseX * rotateSpeedX;
+        //같은 개념으로 카메라가 상/하를 보려면 카메라 오브젝트의 x축이 회전
         eulerAngleX -= mouseY * rotateSpeedY;
 
+        //x축 회전 값의 경우 아래, 위를 볼 수 있는 제한 각도가 설정되어 있다
         eulerAngleX = ClampAngle(eulerAngleX, limitMinX, limitMaxX);
 
+        //실제 오브젝트의 쿼터니온 회전에 적용
         transform.rotation = Quaternion.Euler(eulerAngleX, eulerAngleY, 0);
     }
 
